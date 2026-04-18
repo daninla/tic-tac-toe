@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Крестики-нолики</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <!-- ГЛАВНАЯ СТРАНИЦА -->
+    <div id="start-screen">
+      <h1>Крестики-нолики</h1>
+
+      <div class="players-info">
+        <form id="players-form">
+          <div class="player">
+            <label class="player-number">Игрок 1</label>
+            <input
+              type="text"
+              id="player1-name"
+              placeholder="Введите имя игрока 1"
+            />
+            <span class="player-symbol x">✕</span>
+          </div>
+          <div class="player">
+            <label class="player-number">Игрок 2</label>
+            <input
+              type="text"
+              id="player2-name"
+              placeholder="Введите имя игрока 2"
+            />
+            <span class="player-symbol o">○</span>
+          </div>
+          <button type="submit" id="btn-submit">Отправить</button>
+        </form>
+      </div>
+
+      <div class="game-mode">
+        <h3>Выберите режим игры:</h3>
+        <label
+          ><input type="radio" name="mode" value="human" checked /> Играть с
+          человеком</label
+        >
+        <label><input type="radio" name="mode" value="ai" /> Играть с ИИ</label>
+      </div>
+
+      <button id="btn-start">Начать игру</button>
+    </div>
+
+    <!-- ИГРОВАЯ СТРАНИЦА -->
+    <div id="game-screen" class="hidden">
+      <button id="btn-back">Вернуться в меню</button>
+      <div class="players-info">
+        <div class="player-card">
+          <span class="player-name"></span>
+          <span class="player-symbol x">✕</span>
+        </div>
+        <div class="player-card">
+          <span class="player-name"></span>
+          <span class="player-symbol o">○</span>
+        </div>
+      </div>
+
+      <p id="current-turn">Ходит: Игрок 1 (✕)</p>
+
+      <div id="board"></div>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО -->
+    <div id="modal">
+      <div class="modal-box">
+        <p id="modal-text">Игрок 1 победил!</p>
+        <button id="btn-restart">Сыграть ещё раз</button>
+      </div>
+    </div>
+
+    <script src="src/main.js"></script>
+  </body>
+</html>
